@@ -5,6 +5,7 @@
  */
 package Escenario;
 
+import Dibujo.ExteriorPez;
 import Dibujo.InteriorPez;
 import ch.aplu.turtle.Turtle;
 import ch.aplu.turtle.TurtleFrame;
@@ -21,19 +22,22 @@ public class EscenarioTortugas extends TurtleFrame{
     
     public EscenarioTortugas() {
       tortuga1 = new Turtle(this);
-      
+      tortuga1.setColor(Color.RED);
+      tortuga1.setPos(20,0);
+      tortuga2 = new Turtle(this);
+      tortuga2.setPos(20,0);
     }
     
     public void iniciar(){
        InteriorPez hilo1 = new InteriorPez(tortuga1);
-       hilo1.run();
-       
+       hilo1.start();
+       ExteriorPez hilo2 = new ExteriorPez(tortuga2);
+       hilo2.start();
     }
     
     
     public static void main(String[] args) {
         EscenarioTortugas escenario = new EscenarioTortugas();
-        escenario.iniciar();
-        
+        escenario.iniciar();  
     }
 }

@@ -22,17 +22,26 @@ public class InteriorPez extends Thread{
     }
     
     public void Boca(){
+        double j;
         this.joe.right(90);
         this.joe.forward(25);
         this.joe.right(90);
+        this.joe.penUp();
+        this.joe.setPos(50.5, 12.5);
         for (int i = 0; i < 50; i++) {
+            j=3.6*i;
+            if(j>45 && j< 135){
+                this.joe.penDown();
+            }else{
+                this.joe.penUp();
+            }
             this.joe.right(3.6);
-            this.joe.forward(0.8);
+            this.joe.forward(1.11);
         }
         this.joe.right(90);
     }
     public void Escamas(int lado1, int lado2,int x, int y){
-        this.joe.setPos(x, y);
+        this.joe.setPos(x+20, y);
         this.joe.left(90);
         this.joe.forward(lado2/2);
         this.joe.right(90);
@@ -41,23 +50,23 @@ public class InteriorPez extends Thread{
         r.dibujarRectangulo();   
     }
     public void Aleta(int lado){
-        this.joe.setPos(25, -10);
+        this.joe.setPos(25+25, -10);
         Triangulo t = new Triangulo(joe, lado);
         t.dibujarTriangulo();
     }
     
     public void Ojo(){
-        this.joe.setPos(20, 25);
+        this.joe.setPos(20+30, 15);
         for (int i = 0; i < 100; i++) {
             this.joe.right(3.6);
             this.joe.forward(0.2);
         }
-        this.joe.setPos(20, 25);
+        this.joe.setPos(20+30, 15);
         for (int i = 0; i < 100; i++) {
             this.joe.right(3.6);
             this.joe.forward(0.4);
         }
-        this.joe.setPos(20, 15);
+        this.joe.setPos(20+30, 5);
         this.joe.fill();
     }
     @Override
@@ -69,5 +78,6 @@ public class InteriorPez extends Thread{
         Aleta(16);
         Ojo();
         this.joe.setPos(0, 0);
+        joe.hideTurtle();
     }
 }
