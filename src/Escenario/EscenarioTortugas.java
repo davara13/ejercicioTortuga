@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package EjemploBase;
+package Escenario;
 
+import Dibujo.InteriorPez;
 import ch.aplu.turtle.Turtle;
 import ch.aplu.turtle.TurtleFrame;
 import java.awt.Color;
@@ -24,7 +25,7 @@ public class EscenarioTortugas extends TurtleFrame{
     }
     
     public void iniciar(){
-       Interior hilo1 = new Interior(tortuga1);
+       InteriorPez hilo1 = new InteriorPez(tortuga1);
        hilo1.run();
        
     }

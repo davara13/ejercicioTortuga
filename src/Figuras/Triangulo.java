@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package EjemploBase;
+package Figuras;
 
 import ch.aplu.turtle.Turtle;
 
@@ -11,18 +11,19 @@ import ch.aplu.turtle.Turtle;
  *
  * @author jrozou
  */
-public class Circle extends Thread{
+public class Triangulo{
     private Turtle tortuga;
-    private int radio;
+    private int lado;
 
-    public Circle(Turtle tortuga, int radio) {
+    public Triangulo(Turtle tortuga, int lado) {
         this.tortuga = tortuga;
-        this.radio = radio;
+        this.lado = lado;
     }
     
-    
-    @Override
-    public void run() {
-        
+    public void dibujarTriangulo() {
+        for (int i = 0; i < 3; i++) {
+            this.tortuga.forward(this.lado);
+            this.tortuga.right(120);
+        }
     }
 }
